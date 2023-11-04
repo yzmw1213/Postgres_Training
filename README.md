@@ -14,3 +14,8 @@ PostgresSQLの練習
 ```
   docker exec -it container_name psql -U postgres_user -d test_db
 ```
+
+## dump
+```
+  docker exec postgres_container pg_dump  --clean  --if-exists --schema-only -U postgres_user user_db > postgres.sql
+```

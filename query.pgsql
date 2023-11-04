@@ -29,6 +29,3 @@ CREATE FUNCTION set_update_time() RETURNS trigger AS '
 ' LANGUAGE plpgsql;
 
 CREATE TRIGGER trigger_uu_updated BEFORE UPDATE ON user_db.users FOR EACH ROW EXECUTE PROCEDURE set_update_time();
-
--- SHOW CREATE TABLE
-docker exec postgres_container pg_dump  --clean  --if-exists --schema-only -U postgres_user user_db > postgres.sql
